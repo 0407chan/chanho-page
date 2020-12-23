@@ -2,10 +2,11 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
 import styled from 'styled-components'
+import { prefix } from '../index'
 
-const IMAGE_SOURCE = '/image/godchanho.gif'
-const loveMonday1 = '/image/love-monday.png'
-const loveMonday2 = '/image/love-monday2.png'
+const IMAGE_SOURCE = `${prefix}/image/godchanho.gif`
+const loveMonday1 = `${prefix}/image/love-monday.png`
+const loveMonday2 = `${prefix}/image/love-monday2.png`
 const NIGHT_BACKGROUND_COLOR = 'rgb(23, 24, 41)'
 const DAY_BACKGROUND_COLOR = 'rgb(219, 221, 254)'
 
