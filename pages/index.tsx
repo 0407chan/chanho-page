@@ -12,6 +12,7 @@ export default function Home() {
   const router = useRouter()
 
   useEffect(() => {
+    console.log('hello', prefix)
     router.push(`${prefix}/hello-world`)
   }, [])
   return (

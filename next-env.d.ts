@@ -15,7 +15,7 @@ module.exports = withPlugins([
         strip: true,
         verbose: true
       },
-      imagesPublicPath: '/images/'
+      imagesPublicPath: '/hello-world/_next/static/images/'
     }
   ],
   {

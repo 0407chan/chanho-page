@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "npx next build && next start",
     "deploy": "rm -rf docs && npm run build && npx next export && mv out docs"
   },
   "dependencies": {

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { prefix } from '../index'
 
@@ -179,6 +179,10 @@ export default function Home() {
   const toggleDayNight = () => {
     setisNight(!isNight)
   }
+
+  useEffect(() => {
+    console.log('오냐안오냐', prefix)
+  }, [])
   return (
     <Container isNight={isNight}>
       <Head>
