@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 export default function Home() {
   const router = useRouter()
   useEffect(() => {
-    router.push('/hello-world')
+    router.push(`/hello-world`)
   }, [])
   return (
     <div>
