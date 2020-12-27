@@ -1,0 +1,38 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:develop": "cross-env NODE_ENV=development env_config=develop tsc",
+    "build:beta": "cross-env NODE_ENV=development env_config=beta tsc",
+    "build:stage": "cross-env NODE_ENV=production env_config=stage tsc",
+    "build:prod": "cross-env NODE_ENV=production env_config=prod tsc",
+    "start:develop": "NODE_ENV=development npm run clean:node && node build/server/server.js",
+    "start:beta": "NODE_ENV=development npm run clean:node && node build/server/server.js",
+    "start:stage": "NODE_ENV=production npm run clean:node && node build/server/server.js",
+    "start:prod": "NODE_ENV=production npm run clean:node && node build/server/server.js",
+    "start": "node build/server.js",
+    "dev": "tsnd --no-notify --respawn --transpile-only server.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/app-root-path": "^1.2.4",
+    "@types/body-parser": "^1.19.0",
+    "@types/cors": "^2.8.9",
+    "@types/express": "^4.17.9",
+    "@types/morgan": "^1.9.2",
+    "app-root-path": "^3.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "date-fns": "^2.16.1",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "ts-node": "^9.1.1",
+    "ts-node-dev": "^1.1.1",
+    "typescript": "^4.1.3"
+  }
+}
