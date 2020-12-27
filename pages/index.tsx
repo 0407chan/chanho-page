@@ -149,7 +149,7 @@ const ReflectImage = styled.div<ReflectImageProps>`
   &::after {
     content: '';
     background-image: inherit;
-    width: inherit;
+    width: 100%;
     height: 40%;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -161,7 +161,7 @@ const ReflectImage = styled.div<ReflectImageProps>`
 
   &::before {
     content: '';
-    width: inherit;
+    width: 100%;
     height: 40%;
     position: absolute;
     bottom: -60%;
