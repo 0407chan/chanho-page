@@ -8,7 +8,7 @@ const IMAGE_SOURCE = `/image/godchanho.gif`
 const loveMonday1 = `/image/love-monday.png`
 const loveMonday2 = `/image/love-monday2.png`
 const NIGHT_BACKGROUND_COLOR = 'rgb(23, 24, 41)'
-const DAY_BACKGROUND_COLOR = 'rgb(219, 221, 254)'
+const DAY_BACKGROUND_COLOR = 'rgb(244, 235, 225)'
 
 type ContainerProps = {
   isNight: boolean
@@ -17,6 +17,7 @@ const Container = styled.div<ContainerProps>`
   display: flex;
   width: 100vw;
   height: 100vh;
+  padding: 20px;
   flex-direction: column;
   align-items: center;
 
@@ -129,6 +130,7 @@ type ReflectImageProps = {
   isNight: boolean
 }
 const ReflectImage = styled.div<ReflectImageProps>`
+  display: flex;
   margin: 0px 20px;
   border-radius: 10px;
   box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.8),
