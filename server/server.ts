@@ -6,7 +6,7 @@ import express from 'express'
 import morgan from 'morgan'
 import router from './routes'
 const app = express()
-const port = 80
+const port = 3000
 
 app.use(cors())
 app.use(morgan('dev'))
