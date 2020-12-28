@@ -4,8 +4,8 @@ const Container = styled.div`
   .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 30px;
+    width: 42px;
+    height: 24px;
   }
 
   .switch input {
@@ -29,10 +29,10 @@ const Container = styled.div`
   .slider:before {
     position: absolute;
     content: '';
-    height: 24px;
-    width: 24px;
-    left: 5px;
-    bottom: 3px;
+    height: 28px;
+    width: 28px;
+    left: -4px;
+    bottom: -2px;
     background-color: white;
     -webkit-transition: 0.4s;
     transition: 0.4s;
@@ -47,9 +47,9 @@ const Container = styled.div`
   }
 
   input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
   }
 
   /* Rounded sliders */

@@ -1,9 +1,5 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
-import DayNightCheckBox from '../components/DayNightCheckBox'
 
 const IMAGE_SOURCE = `/image/godchanho.gif`
 const loveMonday1 = `/image/love-monday.png`
@@ -16,53 +12,32 @@ type ContainerProps = {
 }
 const Container = styled.div<ContainerProps>`
   display: flex;
-  width: 100vw;
-  height: 100vh;
-  padding: 20px;
-  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
 
-  transition: background-color 200ms ease;
-  background-color: ${(props) =>
-    props.isNight ? NIGHT_BACKGROUND_COLOR : DAY_BACKGROUND_COLOR};
-
-  .header {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-    min-height: 60px;
+  .text-header {
+    margin: 20px 0px;
+    font-size: 30px;
+    transition: color 200ms ease;
+    color: ${(props) => (props.isNight ? '#ffffff' : NIGHT_BACKGROUND_COLOR)};
+  }
+  .text {
+    margin: 10px 0px;
+    font-size: 15px;
+    transition: color 200ms ease;
+    color: ${(props) => (props.isNight ? '#ffffff' : NIGHT_BACKGROUND_COLOR)};
   }
 
-  .body {
+  .img-wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    padding-bottom: 60px;
+    margin: 20px 0px;
     width: 100%;
-    height: 100%;
-    .text-header {
-      margin: 20px 0px;
-      font-size: 30px;
-      transition: color 200ms ease;
-      color: ${(props) => (props.isNight ? '#ffffff' : NIGHT_BACKGROUND_COLOR)};
-    }
-    .text {
-      margin: 10px 0px;
-      font-size: 15px;
-      transition: color 200ms ease;
-      color: ${(props) => (props.isNight ? '#ffffff' : NIGHT_BACKGROUND_COLOR)};
-    }
-
-    .img-wrapper {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      margin: 20px 0px;
-      width: 100%;
-    }
   }
 `
 
@@ -118,39 +93,23 @@ const ReflectImage = styled.div<ReflectImageProps>`
   }
 `
 export default function Home() {
-  const [isNight, setIsNight] = useState(true)
-  const toggleDayNight = () => {
-    setIsNight(!isNight)
-  }
+  const [isNight] = useState(true)
 
   return (
     <Container isNight={isNight}>
-      <Head>
-        <title>ChrisPage</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <div className="header">
-        <DayNightCheckBox
-          isNight={isNight}
-          toggleDayNight={toggleDayNight}
-        ></DayNightCheckBox>
+      <div className="text-header">안녕하세요 이찬호입니다</div>
+      <div className="text">프론트엔드 개발자입니다.</div>
+      <div className="text">
+        ReactJs와 nextJs를 이용한 페이지입니다. next진짜 최고네요.
       </div>
-      <div className="body">
-        <div className="text-header">안녕하세요 이찬호입니다</div>
-        <div className="text">프론트엔드 개발자입니다.</div>
-        <div className="text">
-          ReactJs와 nextJs를 이용한 페이지입니다. next진짜 최고네요.
-        </div>
-        <div className="text">
-          react쓰시는분들은 무조건 next 쓰는걸 추천합니다.
-        </div>
-        <div className="text">아래 사진은 제 프로필과 관련 없습니다.</div>
-        <div className="img-wrapper">
-          <ReflectImage image={IMAGE_SOURCE} isNight={isNight}></ReflectImage>
-          <ReflectImage image={loveMonday1} isNight={isNight}></ReflectImage>
-          <ReflectImage image={loveMonday2} isNight={isNight}></ReflectImage>
-        </div>
+      <div className="text">
+        react쓰시는분들은 무조건 next 쓰는걸 추천합니다.
+      </div>
+      <div className="text">아래 사진은 제 프로필과 관련 없습니다.</div>
+      <div className="img-wrapper">
+        <ReflectImage image={IMAGE_SOURCE} isNight={isNight}></ReflectImage>
+        <ReflectImage image={loveMonday1} isNight={isNight}></ReflectImage>
+        <ReflectImage image={loveMonday2} isNight={isNight}></ReflectImage>
       </div>
     </Container>
   )
