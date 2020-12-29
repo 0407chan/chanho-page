@@ -14,8 +14,6 @@ type ContainerProps = {
 }
 const Container = styled.div<ContainerProps>`
   display: flex;
-  width: 100vw;
-  height: 100vh;
   flex-direction: column;
   align-items: center;
 
@@ -38,8 +36,7 @@ const Container = styled.div<ContainerProps>`
     justify-content: center;
     align-items: center;
     width: 100vw;
-    padding: 20px;
-    height: 100%;
+    height: calc(100vh - 62px);
     .text-header {
       margin: 20px 0px;
       font-size: 30px;
@@ -77,7 +74,7 @@ const Layout: React.FC = ({ children, title = 'ChrisPage' }: Props) => {
     <Container isNight={isNight}>
       <div className="layout">
         <Head>
-          <title>title</title>
+          <title>ChrisRhee</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <div className="header">

@@ -48,8 +48,11 @@ const Header: React.FC<Props> = ({ isNight, toggleDayNight }: Props) => {
         <Link href="/">
           <span className="router">Home</span>
         </Link>
-        <Link href="/portfolio">
-          <span className="router">Portfolio</span>
+        <Link href="/work">
+          <span className="router">Work</span>
+        </Link>
+        <Link href="/study">
+          <span className="router">Study</span>
         </Link>
       </span>
       <DayNightCheckBox

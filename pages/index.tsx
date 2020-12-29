@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import styled from 'styled-components'
+import { DUMMY_PORTFORLIO } from '../dummy'
+import Work from '../components/Work'
 
-const IMAGE_SOURCE = `/image/godchanho.gif`
-const loveMonday1 = `/image/love-monday.png`
-const loveMonday2 = `/image/love-monday2.png`
 const NIGHT_BACKGROUND_COLOR = 'rgb(23, 24, 41)'
 const DAY_BACKGROUND_COLOR = 'rgb(244, 235, 225)'
 
@@ -13,8 +12,14 @@ type ContainerProps = {
 const Container = styled.div<ContainerProps>`
   display: flex;
   width: 100%;
-  height: 100%;
-
+  height: calc(100vh - 62px);
+  padding: 20px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -38,6 +43,12 @@ const Container = styled.div<ContainerProps>`
     justify-content: center;
     margin: 20px 0px;
     width: 100%;
+  }
+
+  .portfolio-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 `
 
@@ -69,7 +80,7 @@ const ReflectImage = styled.div<ReflectImageProps>`
     background-image: inherit;
     width: 100%;
     height: 40%;
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
     bottom: -60%;
@@ -93,6 +104,7 @@ const ReflectImage = styled.div<ReflectImageProps>`
   }
 `
 export default function Home() {
+  const [portforlioList] = useState(DUMMY_PORTFORLIO)
   const [isNight] = useState(true)
 
   return (
@@ -105,11 +117,10 @@ export default function Home() {
       <div className="text">
         react쓰시는분들은 무조건 next 쓰는걸 추천합니다.
       </div>
-      <div className="text">아래 사진은 제 프로필과 관련 없습니다.</div>
-      <div className="img-wrapper">
-        <ReflectImage image={IMAGE_SOURCE} isNight={isNight}></ReflectImage>
-        <ReflectImage image={loveMonday1} isNight={isNight}></ReflectImage>
-        <ReflectImage image={loveMonday2} isNight={isNight}></ReflectImage>
+      <div className="portfolio-wrapper">
+        {portforlioList.map((port) => {
+          return <Work key={port.id} {...port}></Work>
+        })}
       </div>
     </Container>
   )
