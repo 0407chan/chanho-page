@@ -1,5 +1,5 @@
 import React, { ReactNode, useState } from 'react'
-import Header from './common/Header'
+import Header from './common/Menybar'
 import Head from 'next/head'
 import styled from 'styled-components'
 

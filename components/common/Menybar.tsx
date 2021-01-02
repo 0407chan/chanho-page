@@ -10,6 +10,7 @@ type ContainerProps = {
 }
 const Container = styled.div<ContainerProps>`
   display: flex;
+
   width: 100%;
   height: 100%;
   transition: background-color 200ms ease;
@@ -41,7 +42,7 @@ type Props = {
   toggleDayNight: () => void
 }
 
-const Header: React.FC<Props> = ({ isNight, toggleDayNight }: Props) => {
+const Menybar: React.FC<Props> = ({ isNight, toggleDayNight }: Props) => {
   return (
     <Container isNight={isNight}>
       <span className="router-wrapper">
@@ -63,4 +64,4 @@ const Header: React.FC<Props> = ({ isNight, toggleDayNight }: Props) => {
   )
 }
 
-export default Header
+export default Menybar
