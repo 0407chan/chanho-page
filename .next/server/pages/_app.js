@@ -1317,7 +1317,7 @@ const DayNightCheckBox = ({
 };
 
 /* harmony default export */ var components_DayNightCheckBox = (DayNightCheckBox);
-// CONCATENATED MODULE: ./components/common/Header.tsx
+// CONCATENATED MODULE: ./components/common/Menybar.tsx
 
 
 
@@ -1325,16 +1325,16 @@ const DayNightCheckBox = ({
 
 const NIGHT_BACKGROUND_COLOR = 'rgb(23, 24, 41)';
 const DAY_BACKGROUND_COLOR = 'rgb(244, 235, 225)';
-const Header_Container = /*#__PURE__*/external_styled_components_default.a.div.withConfig({
-  displayName: "Header__Container",
-  componentId: "sc-4lz10c-0"
+const Menybar_Container = /*#__PURE__*/external_styled_components_default.a.div.withConfig({
+  displayName: "Menybar__Container",
+  componentId: "sc-1o4yu4d-0"
 })(["display:flex;width:100%;height:100%;transition:background-color 200ms ease;background-color:", ";justify-content:space-between;.router-wrapper{display:flex;.router{display:flex;justify-content:center;font-weight:600;align-items:center;margin:0px 10px;color:", ";cursor:pointer;&:hover{color:", ";}}}"], props => props.isNight ? NIGHT_BACKGROUND_COLOR : DAY_BACKGROUND_COLOR, props => props.isNight ? '#ffffff' : NIGHT_BACKGROUND_COLOR, props => props.isNight ? '#acacac' : 'rgb(172, 163, 153)');
 
-const Header = ({
+const Menybar = ({
   isNight,
   toggleDayNight
 }) => {
-  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])(Header_Container, {
+  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])(Menybar_Container, {
     isNight: isNight,
     children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("span", {
       className: "router-wrapper",
@@ -1364,7 +1364,7 @@ const Header = ({
   });
 };
 
-/* harmony default export */ var common_Header = (Header);
+/* harmony default export */ var common_Menybar = (Menybar);
 // EXTERNAL MODULE: external "next/head"
 var head_ = __webpack_require__("xnum");
 var head_default = /*#__PURE__*/__webpack_require__.n(head_);
@@ -1412,7 +1412,7 @@ const Layout = ({
         })]
       }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
         className: "header",
-        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(common_Header, {
+        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(common_Menybar, {
           isNight: isNight,
           toggleDayNight: toggleDayNight
         })
